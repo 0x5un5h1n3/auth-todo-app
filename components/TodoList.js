@@ -7,9 +7,11 @@ const TodoList = () => {
 
   return (
     <div>
-      {todos.map((todo) => (
-        <TodoItem key={todo.id} todo={todo} />
-      ))}
+      {todos.length === 0 ? (
+        <p className="text-gray-500">No todos available. Please add some!</p>
+      ) : (
+        todos.map((todo) => <TodoItem key={todo.id} todo={todo} />)
+      )}
     </div>
   );
 };
