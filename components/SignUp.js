@@ -26,29 +26,29 @@ const SignUp = () => {
       }}
     >
       {({ isSubmitting }) => (
-        <Form className="glassmorphism p-6 rounded-lg">
-          <h2 className="text-2xl mb-4">Sign Up</h2>
+        <Form className="space-y-4">
+          <h2 className="text-2xl mb-4 font-bold">Sign Up</h2>
           {message && <div className="text-green-500 mb-4">{message}</div>}
           {error && <div className="text-red-500 mb-4">{error}</div>}
           <Field
             type="text"
             name="name"
             placeholder="Name"
-            className="border p-2 mb-4 w-full"
+            className="border p-2 w-full rounded"
           />
           <ErrorMessage name="name" component="div" className="text-red-500" />
           <Field
             type="email"
             name="email"
             placeholder="Email"
-            className="border p-2 mb-4 w-full"
+            className="border p-2 w-full rounded"
           />
           <ErrorMessage name="email" component="div" className="text-red-500" />
           <Field
             type="password"
             name="password"
             placeholder="Password"
-            className="border p-2 mb-4 w-full"
+            className="border p-2 w-full rounded"
           />
           <ErrorMessage
             name="password"
@@ -58,7 +58,7 @@ const SignUp = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="bg-blue-500 text-white p-2 rounded"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full"
           >
             Sign Up
           </button>

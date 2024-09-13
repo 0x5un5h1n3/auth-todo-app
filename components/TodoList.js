@@ -6,7 +6,7 @@ const TodoList = () => {
   const { todos } = useContext(TodoContext);
 
   return (
-    <div>
+    <div className="space-y-4">
       {todos.length === 0 ? (
         <p className="text-gray-500">No todos available. Please add some!</p>
       ) : (
