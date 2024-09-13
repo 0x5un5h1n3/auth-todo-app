@@ -12,6 +12,7 @@ export const AuthProvider = ({ children }) => {
     setUser(newUser);
     localStorage.setItem("user", JSON.stringify(newUser));
     setMessage("Registration successful!");
+    setError("");
   };
 
   const login = (email, password) => {
@@ -23,10 +24,12 @@ export const AuthProvider = ({ children }) => {
     ) {
       setUser(storedUser);
       setMessage("Login successful!");
-      return true;
+      setError("");
+      return true; // Indicate successful login
     } else {
       setError("Invalid email or password");
-      return false;
+      setMessage("");
+      return false; // Indicate failed login
     }
   };
 

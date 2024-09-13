@@ -1,4 +1,3 @@
-// pages/index.js
 import Layout from "../components/Layout";
 import TodoForm from "../components/TodoForm";
 import TodoList from "../components/TodoList";
@@ -8,7 +7,7 @@ import Login from "../components/Login";
 import SignUp from "../components/SignUp";
 
 const Home = () => {
-  const { user } = useContext(AuthContext); // Ensure this is inside the Layout
+  const { user } = useContext(AuthContext);
 
   return (
     <Layout>
