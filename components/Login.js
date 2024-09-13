@@ -2,9 +2,11 @@ import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { useRouter } from "next/router";
 
 const Login = () => {
-  const { login } = useContext(AuthContext);
+  const { login, message, error } = useContext(AuthContext);
+  const router = useRouter();
 
   const validationSchema = Yup.object({
     email: Yup.string()
@@ -18,12 +20,17 @@ const Login = () => {
       initialValues={{ email: "", password: "" }}
       validationSchema={validationSchema}
       onSubmit={(values) => {
-        login(values.email, values.password);
+        const success = login(values.email, values.password);
+        if (success) {
+          router.push("/");
+        }
       }}
     >
       {({ isSubmitting }) => (
         <Form className="glassmorphism p-6 rounded-lg">
           <h2 className="text-2xl mb-4">Login</h2>
+          {message && <div className="text-green-500 mb-4">{message}</div>}
+          {error && <div className="text-red-500 mb-4">{error}</div>}
           <Field
             type="email"
             name="email"
