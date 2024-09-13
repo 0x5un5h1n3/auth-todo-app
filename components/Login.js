@@ -1,3 +1,4 @@
+// components/Login.js
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Formik, Form, Field, ErrorMessage } from "formik";
@@ -28,21 +29,25 @@ const Login = () => {
     >
       {({ isSubmitting }) => (
         <Form className="space-y-4">
-          <h2 className="text-2xl mb-4 font-bold">Login</h2>
-          {message && <div className="text-green-500 mb-4">{message}</div>}
-          {error && <div className="text-red-500 mb-4">{error}</div>}
+          <h2 className="text-2xl mb-4 font-bold text-center">Login</h2>
+          {message && (
+            <div className="text-green-500 mb-4 text-center">{message}</div>
+          )}
+          {error && (
+            <div className="text-red-500 mb-4 text-center">{error}</div>
+          )}
           <Field
             type="email"
             name="email"
             placeholder="Email"
-            className="border p-2 w-full rounded"
+            className="border border-gray-300 p-2 w-full rounded"
           />
           <ErrorMessage name="email" component="div" className="text-red-500" />
           <Field
             type="password"
             name="password"
             placeholder="Password"
-            className="border p-2 w-full rounded"
+            className="border border-gray-300 p-2 w-full rounded"
           />
           <ErrorMessage
             name="password"

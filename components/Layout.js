@@ -5,8 +5,8 @@ const Layout = ({ children }) => {
   return (
     <AuthProvider>
       <TodoProvider>
-        <div className="flex justify-center items-center min-h-screen bg-gray-100">
-          <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-md">
+        <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-blue-200 to-purple-300">
+          <div className="w-full max-w-lg p-6 bg-white rounded-lg shadow-lg">
             {children}
           </div>
         </div>
