@@ -22,7 +22,7 @@ const Login = () => {
       onSubmit={(values) => {
         const success = login(values.email, values.password);
         if (success) {
-          router.push("/");
+          router.push("/"); // Redirect to the todo list or home page
         }
       }}
     >
